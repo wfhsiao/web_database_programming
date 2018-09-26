@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="myClient.aspx.cs" Inherits="myClient" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="myClient.aspx.cs" Inherits="myClient_callSelf" %>
 
 <!DOCTYPE html>
 
@@ -8,10 +8,12 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" action="myServer.aspx" method="get">
+    <form id="form1" action="myClient.aspx" method="post" runat="server">
     <div>
-    <input type="text" name="point" />       
-    <input id="Submit1" type="submit" value="submit" />
+    <input type="text" name="point" />
+    <input type="text" name="shape" />       
+    <input id="Submit1" type="submit" value="submit" /><br />
+        <asp:Literal ID="msg" runat="server"></asp:Literal>
     </div>
     </form>
 </body>
