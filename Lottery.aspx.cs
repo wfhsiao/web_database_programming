@@ -27,7 +27,24 @@ public partial class Default2 : System.Web.UI.Page
 
         for (int i = 0; i < 6; i++)
         {
-            Response.Output.Write("{0} ", numbers[i]);
+            Response.Output.Write("{0}<br />", toDigits(numbers[i]));
         }
+    }
+
+    private string toDigits(double v)
+    {
+        string ans = "";
+        string str = v.ToString();
+        char[] c = str.ToCharArray();
+        for (int i = 0; i < c.Length; i++)
+        {
+            if (c[i] >= '0' && c[i] <= '9')
+            {
+                ans += String.Format("<img src='digits/{0}.gif' />", c[i]);
+            }
+            else
+                ans += c[i];
+        }
+        return ans;
     }
 }
