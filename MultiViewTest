@@ -1,4 +1,6 @@
-add 
+add one
 MultiView<br />
-and<br />
-3 Views<br />
+and three
+View(s) <br />
+
+MultiView.ActiveViewIndex<br />
