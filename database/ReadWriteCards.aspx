@@ -14,12 +14,19 @@
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="產生資料" />
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="刪除資料" OnClientClick="return confirm('Are you sure to delete all of the data?');" />
         <br />
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" PageSize="4">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="shape" HeaderText="shape" SortExpression="shape" />
                 <asp:BoundField DataField="point" HeaderText="point" SortExpression="point" />
-                <asp:BoundField DataField="score" HeaderText="score" SortExpression="score" />
+                <asp:TemplateField HeaderText="picture" SortExpression="score">
+                    <EditItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("score") %>'></asp:Label>
+                    </EditItemTemplate>                    
+                    <ItemTemplate>
+                        <asp:Image ID="Label1" runat="server" ImageUrl='<%# "poker/" + Eval("point") + Eval("shape") + ".gif" %>'></asp:Image>
+                    </ItemTemplate>
+                </asp:TemplateField>
             </Columns>
             <EditRowStyle BackColor="#2461BF" />
             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
