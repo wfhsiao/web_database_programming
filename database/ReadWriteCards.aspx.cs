@@ -27,4 +27,10 @@ public partial class ReadWriteCards : System.Web.UI.Page
         }
         
     }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        SqlDataSource1.DeleteCommand = "delete from cards ";
+        SqlDataSource1.Delete();
+    }
 }
