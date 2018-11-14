@@ -1,0 +1,24 @@
+讀取檔案(p. 14-12)
+Dim path As String = Server.MapPath("input.txt") '對應目前專案目錄至系統的實體路徑
+Dim sr As New StreamReader(path)
+ch = sr.read()
+line= sr.readLine()
+text = sr.readToEnd()
+
+'read line by line　
+while sr.peek() >=0
+    line = sr.readLine()
+end while
+
+寫入檔案(p. 14-12)
+Dim path As String = Server.MapPath("output.txt") '對應目前專案目錄至系統的實體路徑
+'有兩種方式建立檔案,一種直接建立 streamwriter
+'Dim sw As New StreamWriter(path)
+'另一種使用Filelnfo ,以fileInfo比較有彈性 (可以附加新內容)
+Dim fileInfo As New FileInfo(path)
+Dim sw As StreamWriter = fileInfo.AppendText()
+sw.Write(TextBox1.Text & Constants.vbCrLf)
+
+sw.Flush()
+sw.Close()
+　
