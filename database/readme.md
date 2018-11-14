@@ -1,3 +1,4 @@
+<pre>
 CREATE TABLE [dbo].[cards] (
     [Id]    INT      NOT NULL,
     [shape] CHAR (1) NOT NULL,
@@ -5,3 +6,4 @@ CREATE TABLE [dbo].[cards] (
     [score] INT      DEFAULT ((0)) NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+</pre>
