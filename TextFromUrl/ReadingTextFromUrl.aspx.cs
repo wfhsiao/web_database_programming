@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,18 +13,25 @@ public partial class ReadingTextFromUrl : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string url = "http://einstein.nptu.edu.tw:9212/sources/datastructure/StudentWebs/data/somewords.csv";
+        string url = "http://einstein.nptu.edu.tw:9212/sources/datastructure/StudentWebs/data/phrases.csv";
         WebRequest webReq = WebRequest.Create(url);
         WebResponse webRes = webReq.GetResponse();
-        StreamReader reader = new StreamReader(webRes.GetResponseStream(), Encoding.GetEncoding("Big5"));
-        while (reader.Peek() != -1)
+        Stream webStream = webRes.GetResponseStream();
+        TextFieldParser csvParser = new TextFieldParser(webStream, Encoding.GetEncoding("Big5"))
         {
-            //Response.Write(reader.ReadLine() & "<br/>") 
-            string[] line = reader.ReadLine().Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (string t in line)
-                Response.Write(String.Format("({0})  ", t));
+            Delimiters = new string[] { "," },
+            TrimWhiteSpace = true
+        };
+        // skip the header
+        //csvParser.ReadLine();
+        int item_field = 1;
+        while (!csvParser.EndOfData)
+        {
+            string[] str = csvParser.ReadFields();
+            for (int i = 0; i <= str.Length - 1; i++)
+                Response.Output.Write("({0}) ", str[i]);
+
             Response.Write("<br />");
         }
-        reader.Close();
     }
 }
