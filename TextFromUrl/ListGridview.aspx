@@ -11,10 +11,10 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="TABLE_NAME" DataValueField="TABLE_NAME" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged"></asp:ListBox>
+        <asp:ListBox ID="ListBox1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="TABLE_NAME" DataValueField="TABLE_NAME" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged1"></asp:ListBox>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="select TABLE_NAME from INFORMATION_SCHEMA.TABLES"></asp:SqlDataSource>
         <br />
-        <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource2">
+        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" DataSourceID="SqlDataSource2" OnPageIndexChanging="GridView1_PageIndexChanging">
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="select 3+2"></asp:SqlDataSource>
         <br />
