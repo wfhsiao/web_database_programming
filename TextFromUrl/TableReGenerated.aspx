@@ -45,8 +45,8 @@
         </asp:SqlDataSource>
     
         <br />
-        <asp:Button ID="Button3" runat="server" Text="Button" />
-        <asp:Button ID="Button4" runat="server" Text="Button" />
+        <asp:Button ID="Button3" runat="server" Text="Button" OnClick="Button3_Click" />
+        <asp:Button ID="Button4" runat="server" Text="Button" OnClick="Button4_Click" />
     
     </div>
     </form>

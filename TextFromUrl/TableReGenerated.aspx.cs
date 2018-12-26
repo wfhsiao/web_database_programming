@@ -65,4 +65,14 @@ public partial class _TableReGenerated : System.Web.UI.Page
             }
         }
     }
+
+    protected void Button4_Click(object sender, EventArgs e)
+    {
+        DetailsView1.PageIndex += 1;
+    }
+
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        DetailsView1.PageIndex -= 1;
+    }
 }
