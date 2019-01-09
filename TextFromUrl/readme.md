@@ -9,7 +9,7 @@ DetailsView比GridView方便, 它在編輯狀態下的DropDownList會自動停�
         Label lbl = (Label)DetailsView1.FindControl("lblWord");
         //DropDownList ddl = (DropDownList)e.Row.FindControl("ddlShape");
         if (lbl != null)
-            lbl.Text = "<a href='http://www.google.com.tw/search?q=" + lbl.Text + "'>" + lbl.Text + "</a>";
+            lbl.Text = "&lt;a href='http://www.google.com.tw/search?q=" + lbl.Text + "'>" + lbl.Text + "&lt;/a>";
         
     }
 
