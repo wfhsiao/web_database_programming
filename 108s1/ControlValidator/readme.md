@@ -1,7 +1,7 @@
 * 修改web.config加入
 <pre>
  &lt;appSettings>
-     <add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
+     &lt;add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
  &lt;/appSettings>
 </pre>
 * CustomValidator是示範後端驗證
