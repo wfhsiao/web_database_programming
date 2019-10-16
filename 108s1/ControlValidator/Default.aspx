@@ -35,7 +35,7 @@
                     <asp:TextBox ID="TextBox1" runat="server" Width="98%"></asp:TextBox>
                 </td>
                 <td class="auto-style4">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="請輸入姓名" ControlToValidate="TextBox1" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="請輸入姓名" ControlToValidate="TextBox1" ForeColor="Red">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -44,8 +44,8 @@
                     <asp:TextBox ID="TextBox2" runat="server" Width="98%"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="請輸入年齡" ControlToValidate="TextBox2" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox2" ErrorMessage="年齡介於0-120歲" ForeColor="Red" MaximumValue="120" MinimumValue="0" Type="Integer"></asp:RangeValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="請輸入年齡" ControlToValidate="TextBox2" ForeColor="Red" Display="Dynamic">*</asp:RequiredFieldValidator>
+                    <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox2" ErrorMessage="年齡介於0-120歲" ForeColor="Red" MaximumValue="120" MinimumValue="0" Type="Integer" Display="Dynamic">*</asp:RangeValidator>
                 </td>
             </tr>
              <tr>
@@ -54,7 +54,7 @@
                     <asp:TextBox ID="TextBox3" runat="server" Width="98%"></asp:TextBox>
                 </td>
                  <td>
-                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox3" ErrorMessage="請輸入正確的身份證號" ForeColor="Red" ValidationExpression="[a-zA-Z]{1}[12]{1}[0-9]{8}"></asp:RegularExpressionValidator>
+                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox3" ErrorMessage="請輸入正確的身份證號" ForeColor="Red" ValidationExpression="[a-zA-Z]{1}[12]{1}[0-9]{8}" Display="Dynamic">*</asp:RegularExpressionValidator>
                  </td>
             </tr>
             <tr>
@@ -63,7 +63,7 @@
                     <asp:TextBox ID="TextBox4" runat="server" Width="98%"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox4" ErrorMessage="請輸入正確的email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox4" ErrorMessage="請輸入正確的email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>
@@ -72,13 +72,15 @@
                     <asp:TextBox ID="TextBox5" runat="server" Width="98%"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="TextBox5" ErrorMessage="請輸入偶數" ForeColor="Red" OnServerValidate="IsEven"></asp:CustomValidator>
+                    <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="TextBox5" ErrorMessage="請輸入偶數" ForeColor="Red" OnServerValidate="IsEven">*</asp:CustomValidator>
                 </td>
             </tr>
             <tr>
                 <td>&nbsp;</td>
                 <td colspan="2">
-                    <asp:Button ID="Button1" runat="server" Text="Button" />
+                    <asp:Button ID="Button1" runat="server" Text="OK" />
+                    <br />
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
                     <br />
                 </td>
             </tr>
