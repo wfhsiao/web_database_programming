@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>My first HTML</title>
+<script>
+function sayHi()
+{
+   alert('Hi')
+}
+function changeWord()
+{
+   document.getElementById('yes').innerHTML="Word Changed."  
+}
+function adjustScore()
+{  // newValue = Math.sqrt(value)*10, if newValue>95, then 95
+}
+</script>
+</head>
+<body onload='sayHi()'>
+<h1>Hello</h1>
+<h2>您好</h2>
+<a href='https://www.w3schools.com/tags/tag_hr.asp'>Add a 'hr' tag.</a><br />
+Reference: <a href='https://www.w3schools.com/html/default.asp'>HTML</a>
+<!-- coeffwallpaper addr: 
+https://wallpaperforu.com/wp-content/uploads/2021/01/coffee-wallpaper-21010323345924-scaled.jpg -->
+<img src='' />
+<!-- tooltip (title) -->
+<p>Add an attribute such that when mouse over this paragraph, it shows a tip that says 'hello'</p>
+<!-- display:inline -->
+<button onclick='changeWord()'>Change Word</button>
+<div id='yes'>
+What?
+</div>
+<button onclick="document.getElementById('score').style.display='block'">Show</button>
+<div id='score' style='display:none'>
+    <span id='value' onclick='adjustScore()'>36</span>
+</div>
+<!-- add a table -->
+</body>
+</html>
